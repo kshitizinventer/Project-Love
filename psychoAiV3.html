@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html style= " margin : 0px; padding : 0px;">
+
+<head>
+	<title>Read Text File</title>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="styles.css">
+
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+	<script src="extrafunctions.js"></script>
+
+</head>
+
+<body>
+
+	<!-- <div style= "height : 100px; background-color : #13547a ; padding-top : 0px;">
+	<center>	<p style="font-size : 20px; color: white"> CRAZY AI</p></center>
+	</div> -->
+
+	<br>
+
+	<div class="wrapper">
+    <div class="sidebar">
+        <h2>GET STARTED</h2>
+        <ol type="1">
+           <li><a href="#"><i></i> Export Your chat from whats app into a text file</a></li>
+            <li><a href="#"><i></i>Click on choose file button and select the exported text file</a></li>
+            <!-- <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
+            <li><a href="#"><i class="fas fa-project-diagram"></i>portfolio</a></li>
+            <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
+            <li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li>
+            <li><a href="#"><i class="fas fa-map-pin"></i>Map</a></li> -->
+        </ol>
+				<br><br>
+				<h3>WHAT SCORES MEANS?</h3>
+				<ol type="1">
+					 <li><a href="#"><i></i>0 - 40 : FRIEND</a></li>
+						<li><a href="#"><i></i>40 - 50 : DEFINTELY SOME CHEMISTRY</a></li>
+							<li><a href="#"><i></i>50 - 70 : YOU LIKE EACH OTHER VERY MUCH </a></li>
+							<li><a href="#"><i></i>70 - 100 : IN LOVE</a></li>
+						<!-- <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
+						<li><a href="#"><i class="fas fa-project-diagram"></i>portfolio</a></li>
+						<li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
+						<li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li>
+						<li><a href="#"><i class="fas fa-map-pin"></i>Map</a></li> -->
+				</ol>
+    </div> <!-- end of side bar.......................................!-->
+
+
+
+
+		<div class="main_content">
+        <div class="header"><center><p style = "font-size : 25px;">PSYCHO AI : CONVERGING AI AND PSYCHOLOGY</p></center>
+				<a id="myBtn" style="color : black; display : inline;float:right;">privacy policy</a></div>
+        <div class="info">
+					   <div class = "button-div"><input type="file" name="inputfile" id="inputfile" style = "margin-left : 200px; display : none;"
+						              id="inputfile"></div>
+						<div class="button_cont" align="center" ><a class="example_a"  target="_blank" rel="nofollow noopener"
+							 onclick="document.getElementById('inputfile').click();">SELECT CHAT FILE</a></div>
+
+             <div id="chartContainer" style = "width : 600px ; height : 500px; display: flex;">	<canvas id="myChart" width="600" height="500" style = "margin-left : 400px;"></canvas>
+
+						 </div>
+
+      </div>
+    </div>
+
+	</div>
+
+	<!-- <pre id="output"></pre> -->
+
+	<p id="output1"></p>
+	<!-- <canvas id="myChart" width="600" height="600"></canvas> -->
+
+
+	<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+<span class="close">&times;</span>
+		<div class="modal-header">
+			<h3>Privacy Policy</h3>
+
+
+	  </div>
+
+		<div class="modal-body">
+      <p style="font-size:18px; font-weight: 100; font-family : monospace;
+			 padding-bottom : 5px;">We never save or upload any of your chats . </p>
+			 <p style="font-size:18px; font-weight: 100; font-family : monospace;
+ 			 padding-bottom : 5px;"> All computation happens on your own device</p>
+
+   </div>
+
+
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+if (event.target == modal) {
+ modal.style.display = "none";
+}
+}
+</script>
+
+
+
+<!--=============================================================================*/
+/* MAIN ALGORITHM
+/*=============================================================================*/-->
+<script type="text/javascript">
+
+var temp = 'starsubmit()';
+
+var line1 = '<div class="stars" style=" position :absolute; margin-left : 1100px; margin-top : 270px;" ><h3 style="padding-left: 10px; padding-top : 10px">How accurate is the result :</h3><form>';
+var line2 = '<input class="star star-5" id="star-5" type="radio" name="star"/>	<label class="star star-5" for="star-5" style = "padding-right : 22px;"></label>	<input class="star star-4" id="star-4" type="radio" name="star"/>	<label class="star star-4" for="star-4"></label>';
+var line3 = '<input class="star star-3" id="star-3" type="radio" name="star"/> <label class="star star-3" for="star-3"></label><input class="star star-2" id="star-2" type="radio" name="star"/><label class="star star-2" for="star-2"></label><input class="star star-1" id="star-1" type="radio" name="star"/><label class="star star-1" for="star-1"></label></form>';
+var line4 = '<div class="button_cont" id="starsubmit" align="center" onclick="'+temp+' " ><a class="example_a"  target="_blank" rel="nofollow noopener">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></div></div>';
+
+
+		document.getElementById('inputfile')
+			.addEventListener('change', function() {
+
+    // if(document.getElementById('inputfile') != null)
+		//   location.reload();
+
+	document.getElementById("chartContainer").innerHTML = '&nbsp;';
+document.getElementById("chartContainer").innerHTML = '<canvas id="myChart" width="600" height="500" style = "margin-left : 400px; "></canvas>' + line1 + line2 + line3 + line4;
+// var ctx = document.getElementById("myCanvas").getContext("2d");
+
+		  var file = this.files[0];
+
+
+		  var reader = new FileReader();
+		  reader.onload = function(progressEvent){
+
+
+		    // By lines
+		    var lines = this.result.split('\n');
+				var count = 0;
+				var count1 = 0;
+				var count2 = 0;
+				var counthey = 0,counthey1 = 0,counthey2 = 0;
+				var line1 = 0,line2 =0;
+				var sim1=0,sim2=0,tempcount1=0,tempcount2=0;
+				var name1 = "something1";
+				var name2 = "something2";
+				var lastName = "cool";
+				var lastdate = "40";
+				var totalactivedays = 0;
+				var interest1=0,interest2=0,interest=0;
+				var bro = 0;
+				var words = 0;
+				var onewordlines = 0;
+				var totalletter = 0;
+				var date = '41';
+				var chat = 'some';
+
+				//..........................................
+				function isDigit(n) {
+    return Boolean([true, true, true, true, true, true, true, true, true, true][n]);
+        }
+          //..................................
+
+				totallines = lines.length;
+		    for(var line = lines.length-totallines; line < lines.length; line++){
+		      // console.log(lines[line]);
+
+					var str = lines[line];
+					var no_of_semicolon = (str.match(/:/g) || []).length;
+					// console.log("no of no_of_semicolon ="+no_of_semicolon);
+					// if(no_of_semicolon == 0)
+					//  console.log(str);
+					// var no_of_semicolon = (str.match(/:/g)).length;
+
+					if(lines[0].charAt(0) == '[')
+						chat = 'ios';
+					else
+					  chat = 'android';
+
+      if(str != null)
+        if( (chat == 'android' && no_of_semicolon == 2) || (chat == 'ios' && no_of_semicolon == 3) ){
+
+
+         if(str.charAt(0) == '['){
+             date = str.substring(1,3);
+						 chat = 'ios';
+					 }
+					else if( isDigit(str.charAt(0)) && ( isDigit(str.charAt(0)) || str.charAt(0) =='/'   ) ){
+            date = str.substring(0,2);
+						chat = 'android';
+					// console.log(date);
+				}
+
+
+					if(date != lastdate)
+					 totalactivedays++;
+
+					 lastdate = date;
+ //// parsing names based on ios or android chat file ---------------
+       if(chat == 'android' ){
+					var name = str.substring(
+           str.indexOf("-") + 1,
+             str.lastIndexOf(":")
+            );
+					}
+					else if(chat == 'ios' ){
+						var name = str.substring(
+						 str.indexOf("]") + 1,
+							 str.lastIndexOf(":")
+							);
+					}
+//-----------------------------------------------------------------
+        if(str.includes('bro ') || str.includes('bhai') ){
+					 bro++;
+					 // console.log(str);
+				}
+
+			 totalletter += str.length;
+
+
+			   if(str.includes(": Hy") || str.includes(": Hey") || str.includes(": Hi"))
+				  {
+						// console.log(str);
+						counthey++;
+						if(name == name1)
+						{
+							counthey1++;
+							if(str.includes(": Heyy"))
+							 counthey1 = counthey1+3;
+							if(str.includes(": Heyyy"))
+							 counthey1 = counthey1+5;
+							if(str.includes(": Heyyyy"))
+							  counthey1 = counthey1+7;
+
+						}
+						if(name == name2)
+						{ counthey2++;
+							if(str.includes(": Heyy"))
+							 counthey2 = counthey2+3;
+							if(str.includes(": Heyyy"))
+							 counthey2 = counthey2+5;
+							if(str.includes(": Heyyyy"))
+								counthey2 = counthey2+7;
+						}
+
+
+
+					}
+
+
+
+
+						if(name1 == "something1")
+						 {name1 =  name; }
+						else if(name2 == "something2" && name != name1)
+						{ name2 = name; }
+
+
+
+       if(lastName != name)
+				{if(name == name1)
+				 sim1++;
+			 else if(name == name2)
+			   sim2++;
+			 }
+
+
+
+
+					if(name == name1)
+					{	line1++;
+
+					}
+
+					 if(name == name2)
+					{  line2++;
+
+					 }
+          lastName = name;
+
+// str.includes("♥️")
+// str.includes("❤️")
+				   if(str.includes("😂") || str.includes("😂") || str.includes("😜") || str.includes("🤣") || str.includes("😂") || str.includes("💜") || str.includes("🙈"))
+					  { var a = (str.match(/🙈/g) || []).length;
+							var b =  (str.match(/😂/g) || []).length;
+							var c = (str.match(/♥️/g) || []).length;
+							var d = (str.match(/🤣/g) || []).length;
+							var e = (str.match(/💜/g) || []).length;
+
+							count = count+ a+b+c+d+e;
+							 // +(str.match(/😂/g) || []).length;
+							 if(name == name1){
+		 						  count1 = count1 + a+b+c+d+e;
+		 					}
+		 					else if(name == name2){
+		 						  count2 = count2 + a+b+c+d+e;
+
+		 					}
+
+
+						}
+						// console.log(name);
+
+		    } // if for : == 2
+			}
+				console.log('combined ratio = '+count/lines.length);
+				// console.log('lines ='+lines.length);
+				// var r = (counthey/100)*2000;
+				// console.log('counthey ratio = ' + r);
+				//
+				// // console.log('count = '+count);
+				// console.log('no of hey = '+counthey);
+
+				// console.log(name1 + " ratio = " + count1/line1);
+				// // console.log("count1 = "+ count1);
+				// // console.log("line1 = "+ line1);
+				// console.log(name1 + "avg message= " + line1/sim1);
+				//
+				//
+				// console.log(name2 + " ratio = " + count2/line2);
+				// // console.log("count2 = "+ count2);
+				// // console.log("line2 = "+ line2);
+				// console.log(name2 + "avg message= " + line2/sim2);
+					// console.log("sim2= " +sim2);
+					console.log(name1 +  " = " +  count1 );
+					console.log(name2 + " = " + count2);
+
+  var brointerest = 0;
+					if( (count/totallines)*100 < 11 && (bro/totalactivedays)*100 > 10)
+					 {brointerest = 1;
+						 console.log("bro = "+ bro);
+						 console.log("total totalactivedays = "+totalactivedays);
+					 }
+
+      avg1 = line1/sim1;
+			avg2 = line2/sim2;
+			avg = (avg1+avg2)/2;
+			avghey = counthey1/2  + counthey2/2;
+			avgconv = (totallines/totalactivedays);
+			 console.log("avgconv = "+ avgconv);
+			avgconvper = avgconv/70;
+      var avgbroperconv = 0;
+			avgbroperconv = bro/totalactivedays;
+			console.log("avgbroperconv = "+ avgbroperconv);
+			//
+			// if(avgbroperconv  > 1 )
+      //   avgbroperconv = ;
+
+      interest1 =(count/totallines)*70 + (counthey1/totalactivedays)*20*(1-avgbroperconv) + (avg1/4)*30 ;
+			interest2 = (count/totallines)*70 + (counthey2/totalactivedays)*20*(1-avgbroperconv)  + (avg2/4)*30 ;
+			interest = (count/totallines)*70 + (avghey/totalactivedays)*20*(1-avgbroperconv) + (avg/4)*30;
+			if(brointerest == 1)
+			{
+				console.log("hey bro interest");
+				interest1 *= 0.5;
+			 interest2 *= 0.5;
+			 interest *= 0.5;
+
+			 if((bro/totalactivedays)*100 > 50)
+			  interest1 *= 0.5;
+		    interest2 *= 0.5;
+		     interest *= 0.5;
+		 }
+
+		 if(avgbroperconv > 1)
+		 {
+			 interest1 = interest1/avgbroperconv;
+			 interest2 = interest2/avgbroperconv;
+				interest = interest/avgbroperconv;
+
+		 }
+
+		 if(avgconv < 15){
+			  console.log("avg conv interest");
+			 interest1 *= 0.5;
+			 interest2  *= 0.5;
+			 interest *= 0.5;
+		 }
+
+		 if(avgconv > 50 && lines.length  > 1000)
+		 {
+			 interest1 *= 1.1;
+			 interest2  *= 1.1;
+			 interest *= 1.1;
+		 }
+
+
+
+		 if( (count/totallines)*100 > 11  && (count/totallines)*100 < 30)
+		{
+			// console.log("1.2");
+			interest1 *= 1.2;
+			interest2  *= 1.2;
+			interest *= 1.2;
+		}
+
+		if( interest < 0 || interest1 < 0 || interest2 < 0){
+			 interest *= -1;
+			 interest1 *= -1;
+ 			interest2  *= -1;
+
+		}
+			console.log(name1);
+      console.log( (count/totallines)*70 );
+			console.log( (counthey1/totalactivedays)*20 );
+			console.log( (avg1/4)*30*(1-avgbroperconv));
+			console.log(avg1);
+			//
+			console.log(name2);
+			 console.log( (count/totallines)*70 );
+			console.log( (counthey2/totalactivedays)*20 );
+			console.log( (avg2/4)*30*(1-avgbroperconv) );
+
+			 console.log(avg2);
+      // console.log("total lines = "+ lines.length);
+			// console.log("totalactivedays = "+ totalactivedays);
+			// console.log("avgconv = "+ lines.length/totalactivedays);
+			//
+			// console.log("avgletters =" + totalletter/lines.length );
+			createCookie("name1", name1, "1000");
+		 createCookie("name2", name2, "1000");
+		 createCookie("interest1", interest1, "1000");
+		 createCookie("interest2", interest2, "1000");
+		 createCookie("interest", interest, "1000");
+
+		 createCookie("counthey1", counthey1, "1000");
+		 createCookie("counthey2", counthey2, "1000");
+		 createCookie("counthey", counthey, "1000");
+
+		 createCookie("countemoji", count, "10");
+		createCookie("lines1", line1, "10");
+		createCookie("lines2", line2, "10");
+
+		createCookie("sim1", sim1, "10");
+	 createCookie("sim2", sim2, "10");
+
+	 createCookie("totalactivedays",totalactivedays, "10");
+	createCookie("bro", bro, "10");
+	createCookie("avg1", avg1, "10");
+	createCookie("avg2", avg2, "10");
+
+
+
+
+
+					// drawing the chart-----------------------------------------
+					var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+	 type: 'bar',
+	 data: {
+			 labels: [name1,name2,'overall'],
+			 datasets: [{
+					 label: 'INTEREST',
+					 data: [interest1, interest2, interest],
+					 backgroundColor: [
+							 'rgba(255, 99, 132, 0.2)',
+							 'rgba(54, 162, 235, 0.2)',
+							 'rgba(255, 206, 86, 0.2)',
+							 'rgba(75, 192, 192, 0.2)',
+							 'rgba(153, 102, 255, 0.2)',
+							 'rgba(255, 159, 64, 0.2)'
+					 ],
+					 borderColor: [
+							 'rgba(255, 99, 132, 1)',
+							 'rgba(54, 162, 235, 1)',
+							 'rgba(255, 206, 86, 1)',
+							 'rgba(75, 192, 192, 1)',
+							 'rgba(153, 102, 255, 1)',
+							 'rgba(255, 159, 64, 1)'
+					 ],
+					 borderWidth: 1
+			 }]
+	 },
+	 options: {
+                // responsive: false,
+								// maintainAspectRatio: true,
+								scales: {
+									yAxes: [{
+						       ticks: {
+								    min: 0,
+								    max: 100,
+										stepSize : 10
+										// fontSize: 20
+						       }
+				       }]
+              }
+
+            }
+});
+myChart.update();
+
+//-----------------------------------------------------------------
+		  };
+		  reader.readAsText(file);
+		})
+
+ function starsubmit(){
+	var rating = 6;
+	 if(document.getElementById('star-5').checked)
+	   rating = 5;
+	 else if(document.getElementById('star-4').checked)
+	    rating = 4;
+	 else if(document.getElementById('star-3').checked)
+	    rating = 3;
+	 else if(document.getElementById('star-2').checked)
+	  rating = 2;
+	 else if(document.getElementById('star-1').checked)
+	    rating = 1;
+
+			createCookie("rating", rating, "10");
+ }
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
